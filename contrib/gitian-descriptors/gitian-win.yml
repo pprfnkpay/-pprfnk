@@ -1,5 +1,5 @@
 ---
-name: "pprfnk-win-0.12"
+name: "pprfnk-win-1.0.0.1"
 enable_cache: true
 suites:
 - "precise"
@@ -20,7 +20,7 @@ packages:
 - "zip"
 reference_datetime: "2014-01-10 00:00:00"
 remotes:
-- "url": "https://github.com/pprfnk/pprfnk.git"
+- "url": "https://github.com/pprfnkpay/pprfnk.git"
   "dir": "pprfnk"
 files: []
 script: |

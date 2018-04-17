@@ -281,7 +281,7 @@ Clone the git repositories for pprfnk and gitian and then checkout the pprfnk ve
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/pprfnk/pprfnk.git
+git clone https://github.com/pprfnkpay/pprfnk.git
 cd pprfnk
 git checkout v${VERSION}
 cd ..
