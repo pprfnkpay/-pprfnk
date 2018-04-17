@@ -60,15 +60,15 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += dashd
+  bin_PROGRAMS += pprfnkd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += dash-cli dash-tx
+  bin_PROGRAMS += pprfnk-cli pprfnk-tx
 endif
 
 .PHONY: FORCE
-# dash core #
+# pprfnk core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrman.h \
@@ -170,7 +170,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between dashd and dash-qt
+# server: shared between pprfnkd and pprfnk-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -202,7 +202,7 @@ libbitcoin_server_a_SOURCES = \
   $(JSON_H) \
   $(BITCOIN_CORE_H)
 
-# wallet: shared between dashd and dash-qt, but only linked
+# wallet: shared between pprfnkd and pprfnk-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_SOURCES = \
@@ -278,7 +278,7 @@ univalue_libbitcoin_univalue_a_SOURCES = \
   univalue/univalue_escapes.h \
   univalue/univalue.h
 
-# common: shared between dashd, and dash-qt and non-server tools
+# common: shared between pprfnkd, and pprfnk-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   allocators.cpp \
@@ -333,7 +333,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
-# cli: shared between dash-cli and dash-qt
+# cli: shared between pprfnk-cli and pprfnk-qt
 libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
@@ -343,7 +343,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-dashd_LDADD = \
+pprfnkd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UNIVALUE) \
@@ -354,35 +354,35 @@ dashd_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_WALLET
-dashd_LDADD += libbitcoin_wallet.a
+pprfnkd_LDADD += libbitcoin_wallet.a
 endif
-dashd_SOURCES = dashd.cpp
+pprfnkd_SOURCES = pprfnkd.cpp
 #
 
 if TARGET_WINDOWS
-dashd_SOURCES += dashd-res.rc
+pprfnkd_SOURCES += pprfnkd-res.rc
 endif
 
-dashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
-dashd_CPPFLAGS = $(BITCOIN_INCLUDES)
-dashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+pprfnkd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
+pprfnkd_CPPFLAGS = $(BITCOIN_INCLUDES)
+pprfnkd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
-# dash-cli binary #
-dash_cli_LDADD = \
+# pprfnk-cli binary #
+pprfnk_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
   $(SSL_LIBS) \
   $(CRYPTO_LIBS)
 
-dash_cli_SOURCES = \
-  dash-cli.cpp
+pprfnk_cli_SOURCES = \
+  pprfnk-cli.cpp
 
-dash_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
+pprfnk_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
-# dash-tx binary #
-dash_tx_LDADD = \
+# pprfnk-tx binary #
+pprfnk_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -391,15 +391,15 @@ dash_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-dash_tx_SOURCES = dash-tx.cpp
-dash_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+pprfnk_tx_SOURCES = pprfnk-tx.cpp
+pprfnk_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-dash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+pprfnk_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dash_cli_SOURCES += dash-cli-res.rc
+pprfnk_cli_SOURCES += pprfnk-cli-res.rc
 endif
-dash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+pprfnk_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h

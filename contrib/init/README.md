@@ -1,9 +1,9 @@
 Sample configuration files for:
 
-SystemD: dashd.service
-Upstart: dashd.conf
-OpenRC:  dashd.openrc
-         dashd.openrcconf
+SystemD: pprfnkd.service
+Upstart: pprfnkd.conf
+OpenRC:  pprfnkd.openrc
+         pprfnkd.openrcconf
 
 have been made available to assist packagers in creating node packages here.
 
