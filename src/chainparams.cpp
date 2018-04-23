@@ -144,16 +144,16 @@ public:
 
         vSeeds.clear(); //! pprfnk doesn't have any DNS seeds yet.
 
-        // Pprfnk addresses start with 'PPR'
-        base58Prefixes[PUBKEY_ADDRESS] = boost::assign::list_of(0x37)(0x37)(0x3C).convert_to_container<std::vector<unsigned char> >();
+        // Pprfnk addresses start with 'P'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
         // Pprfnk script addresses start with '8'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,18);
-        // Pprfnk private keys start with 'FNK'
-        base58Prefixes[SECRET_KEY] =     boost::assign::list_of(0x23)(0x35)(0x2D).convert_to_container<std::vector<unsigned char> >();
-        // Pprfnk BIP32 pubkeys start with 'Ppub' (Bitcoin defaults)
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x37)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Pprfnk BIP32 prvkeys start with 'Pprv' (Bitcoin defaults)
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x37)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
+        // Pprfnk private keys start with 'F'
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,35);
+        // Pprfnk BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
+        // Pprfnk BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
