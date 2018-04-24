@@ -149,7 +149,7 @@ public:
         // Pprfnk script addresses start with '8'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,18);
         // Pprfnk private keys start with 'F'
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,35);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,95);
         // Pprfnk BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         // Pprfnk BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
@@ -216,7 +216,7 @@ public:
         // Testnet Pprfnk script addresses start with '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,20);
         // Testnet private keys start with 'f'
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,95);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,155);
         // Testnet Pprfnk BIP32 pubkeys start with 'tpub'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         // Testnet Pprfnk BIP32 prvkeys start with 'tprv'
