@@ -215,8 +215,8 @@ public:
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,127);
         // Testnet Pprfnk script addresses start with '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,20);
-        // Testnet private keys start with 'f'
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,155);
+        // Testnet private keys start with '9' (Bitcoin defaults)
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
         // Testnet Pprfnk BIP32 pubkeys start with 'tpub'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         // Testnet Pprfnk BIP32 prvkeys start with 'tprv'
