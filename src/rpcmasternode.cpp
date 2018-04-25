@@ -341,13 +341,13 @@ Value masternode(const Array& params, bool fHelp)
                 throw runtime_error("incorrect passphrase\n");
             }
         }
-
+/*
         if((strCommand == "start-missing" || strCommand == "start-disabled") &&
          (masternodeSync.RequestedMasternodeAssets <= MASTERNODE_SYNC_LIST ||
           masternodeSync.RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED)) {
             throw runtime_error("You can't use this command until masternode list is synced\n");
         }
-
+*/
         std::vector<CMasternodeConfig::CMasternodeEntry> mnEntries;
         mnEntries = masternodeConfig.getEntries();
 
