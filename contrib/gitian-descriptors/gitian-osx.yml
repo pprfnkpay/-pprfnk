@@ -1,5 +1,5 @@
 ---
-name: "pprfnk-osx-1.0.0.1"
+name: "pprfnk-osx-1.0.0.2"
 enable_cache: true
 suites:
 - "precise"
