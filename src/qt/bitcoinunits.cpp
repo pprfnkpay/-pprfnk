@@ -22,7 +22,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(PPRFNK);
     unitlist.append(mPPRFNK);
     unitlist.append(uPPRFNK);
-    unitlist.append(duffs);
+    unitlist.append(plates);
     return unitlist;
 }
 
@@ -33,7 +33,7 @@ bool BitcoinUnits::valid(int unit)
     case PPRFNK:
     case mPPRFNK:
     case uPPRFNK:
-    case duffs:
+    case plates:
         return true;
     default:
         return false;
@@ -47,7 +47,7 @@ QString BitcoinUnits::id(int unit)
         case PPRFNK: return QString("pprfnk");
         case mPPRFNK: return QString("mpprfnk");
         case uPPRFNK: return QString::fromUtf8("upprfnk");
-        case duffs: return QString("duffs");
+        case plates: return QString("plates");
         default: return QString("???");
     }
 }
@@ -61,7 +61,7 @@ QString BitcoinUnits::name(int unit)
             case PPRFNK: return QString("PPRFNK");
             case mPPRFNK: return QString("mPPRFNK");
             case uPPRFNK: return QString::fromUtf8("μPPRFNK");
-            case duffs: return QString("duffs");
+            case plates: return QString("plates");
             default: return QString("???");
         }
     }
@@ -72,7 +72,7 @@ QString BitcoinUnits::name(int unit)
             case PPRFNK: return QString("tPPRFNK");
             case mPPRFNK: return QString("mtPPRFNK");
             case uPPRFNK: return QString::fromUtf8("μtPPRFNK");
-            case duffs: return QString("tduffs");
+            case plates: return QString("tplates");
             default: return QString("???");
         }
     }
@@ -87,7 +87,7 @@ QString BitcoinUnits::description(int unit)
             case PPRFNK: return QString("Pprfnk");
             case mPPRFNK: return QString("Milli-Pprfnk (1 / 1" THIN_SP_UTF8 "000)");
             case uPPRFNK: return QString("Micro-Pprfnk (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Pprfnk (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case plates: return QString("Ten Nano-Pprfnk (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -98,7 +98,7 @@ QString BitcoinUnits::description(int unit)
             case PPRFNK: return QString("TestPprfnks");
             case mPPRFNK: return QString("Milli-TestPprfnk (1 / 1" THIN_SP_UTF8 "000)");
             case uPPRFNK: return QString("Micro-TestPprfnk (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestPprfnk (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case plates: return QString("Ten Nano-TestPprfnk (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -111,7 +111,7 @@ qint64 BitcoinUnits::factor(int unit)
     case PPRFNK:  return 100000000;
     case mPPRFNK: return 100000;
     case uPPRFNK: return 100;
-    case duffs: return 1;
+    case plates: return 1;
     default:   return 100000000;
     }
 }
@@ -123,7 +123,7 @@ int BitcoinUnits::decimals(int unit)
     case PPRFNK: return 8;
     case mPPRFNK: return 5;
     case uPPRFNK: return 2;
-    case duffs: return 0;
+    case plates: return 0;
     default: return 0;
     }
 }

@@ -60,7 +60,7 @@ public:
         PPRFNK,
         mPPRFNK,
         uPPRFNK,
-        duffs
+        plates
     };
 
     enum SeparatorStyle

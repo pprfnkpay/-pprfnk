@@ -39,11 +39,11 @@
         <file alias="unit_pprfnk">res/icons/unit_pprfnk.png</file>
         <file alias="unit_mpprfnk">res/icons/unit_mpprfnk.png</file>
         <file alias="unit_upprfnk">res/icons/unit_upprfnk.png</file>
-        <file alias="unit_duffs">res/icons/unit_duffs.png</file>
+        <file alias="unit_plates">res/icons/unit_plates.png</file>
         <file alias="unit_tpprfnk">res/icons/unit_tpprfnk.png</file>
         <file alias="unit_tmpprfnk">res/icons/unit_tmpprfnk.png</file>
         <file alias="unit_tupprfnk">res/icons/unit_tupprfnk.png</file>
-        <file alias="unit_tduffs">res/icons/unit_tduffs.png</file>
+        <file alias="unit_tplates">res/icons/unit_tplates.png</file>
         <file alias="lock_closed">res/icons/lock_closed.png</file>
         <file alias="lock_open">res/icons/lock_open.png</file>
         <file alias="key">res/icons/key.png</file>
